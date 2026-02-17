@@ -8,9 +8,20 @@ import {
 } from "react-router";
 
 import type { Route } from "./+types/root";
-import "./app.css";
+import { Header, Footer } from "./components";
+
+import appCssUrl from "./app.css?url";
+import globalsCssUrl from "./styles/globals.scss?url";
+import sectionCssUrl from "./components/primitives/section.scss?url";
+import headerCssUrl from "@jetbrains/kotlin-web-site-ui/out/components/header/index.css?url";
+import footerCssUrl from "@jetbrains/kotlin-web-site-ui/out/components/footer/index.css?url";
 
 export const links: Route.LinksFunction = () => [
+  { rel: "stylesheet", href: headerCssUrl },
+  { rel: "stylesheet", href: footerCssUrl },
+  { rel: "stylesheet", href: appCssUrl },
+  { rel: "stylesheet", href: globalsCssUrl },
+  { rel: "stylesheet", href: sectionCssUrl },
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
   {
     rel: "preconnect",
@@ -29,11 +40,18 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg" />
         <Meta />
         <Links />
       </head>
       <body>
-        {children}
+        <div className="global-layout">
+          <Header />
+          <div className="g-layout global-content">
+            {children}
+          </div>
+          <Footer />
+        </div>
         <ScrollRestoration />
         <Scripts />
       </body>

@@ -1,7 +1,11 @@
 .DS_Store
 .env
+.env.local
+*.log
 /node_modules/
+package-lock.json
 
-# React Router
 /.react-router/
 /build/
+MIGRATION_PLAN.md
+TASK.md
