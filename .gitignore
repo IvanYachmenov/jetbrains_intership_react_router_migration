@@ -7,5 +7,9 @@ package-lock.json
 
 /.react-router/
 /build/
+
+# Внутренние/сгенерированные документы — не нужны тому, кто клонирует
 MIGRATION_PLAN.md
 TASK.md
+app/APP_STRUCTURE.md
+ASSETS_CHECKLIST.md
