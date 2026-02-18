@@ -15,8 +15,10 @@ import globalsCssUrl from "./styles/globals.scss?url";
 import sectionCssUrl from "./components/primitives/section.scss?url";
 import headerCssUrl from "@jetbrains/kotlin-web-site-ui/out/components/header/index.css?url";
 import footerCssUrl from "@jetbrains/kotlin-web-site-ui/out/components/footer/index.css?url";
+import jbSansFontCssUrl from "@rescui/typography/lib/font-jb-sans-auto.css?url";
 
 export const links: Route.LinksFunction = () => [
+  { rel: "stylesheet", href: jbSansFontCssUrl },
   { rel: "stylesheet", href: headerCssUrl },
   { rel: "stylesheet", href: footerCssUrl },
   { rel: "stylesheet", href: appCssUrl },

@@ -1,13 +1,21 @@
-import { Section, Container } from "~/components";
+import { ThemeProvider } from "@rescui/ui-contexts";
+import { HeaderSection } from "./header-section/HeaderSection";
+import { LatestFromKotlinSection } from "./latest-from-kotlin-section/LatestFromKotlinSection";
+import { WhyKotlinSection } from "./why-kotlin-section/WhyKotlinSection";
+import { UsageSection } from "./usage-section/UsageSection";
+import { StartSection } from "./start-section/StartSection";
+import "./overview-page.scss";
 
 export default function Home() {
   return (
-    <div data-page="home">
-      <Section>
-        <Container>
-          <p className="p-8">Home page — sections to be added</p>
-        </Container>
-      </Section>
-    </div>
+    <ThemeProvider theme="dark">
+      <div className="overview-page" data-page="home">
+        <HeaderSection />
+        <LatestFromKotlinSection />
+        <WhyKotlinSection />
+        <UsageSection />
+        <StartSection />
+      </div>
+    </ThemeProvider>
   );
 }

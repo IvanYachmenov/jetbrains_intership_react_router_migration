@@ -1,0 +1,1 @@
+export { newsData } from "./news";

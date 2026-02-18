@@ -9,7 +9,7 @@
     "typecheck": "react-router typegen && tsc"
   },
   "dependencies": {
-    "@jetbrains/kotlin-web-site-ui": "^4.14.4",
+    "@jetbrains/kotlin-web-site-ui": "3.1.0",
     "@react-hook/resize-observer": "^2.0.2",
     "@react-router/node": "7.12.0",
     "@react-router/serve": "7.12.0",

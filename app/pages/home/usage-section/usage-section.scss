@@ -1,0 +1,25 @@
+.usage-section {
+  background-color: #fff;
+  padding-top: 96px;
+}
+.usage-section__card {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  min-height: 140px;
+}
+.usage-section__logo {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  object-position: left;
+  flex-shrink: 0;
+}
+.usage-section__logo_spring {
+  padding: 10px 0;
+  box-sizing: border-box;
+}
+.usage-section__card-desc {
+  margin-top: 8px;
+  margin-bottom: 0;
+}

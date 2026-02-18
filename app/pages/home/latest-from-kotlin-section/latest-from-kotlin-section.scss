@@ -1,0 +1,31 @@
+.kto-layout-section.latest-from-kotlin-section {
+  background-color: transparent;
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+
+.latest-from-kotlin-section__banner-link {
+  display: block;
+  font-size: 0;
+  line-height: 0;
+}
+
+.latest-from-kotlin-section__banner-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+
+.latest-from-kotlin-section__button {
+  display: flex;
+  justify-content: center;
+}
+
+.latest-from-kotlin-section__banner-placeholder {
+  display: block;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  font-size: 18px;
+}
