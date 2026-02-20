@@ -36,7 +36,7 @@ export function ProgrammingLanguage() {
           </Button>
         </div>
       </div>
-      <div className="kto-col-8 kto-col-md-12">
+      <div className="programming-language__tabs kto-col-8 kto-col-md-12">
         <TabList value={activeIndex} onChange={(v) => setActiveIndex(v)}>
           {programmingLanguageTabs.map((tab, i) => (
             <Tab key={i}>{tab.title}</Tab>

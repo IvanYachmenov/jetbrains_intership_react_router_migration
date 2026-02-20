@@ -1,3 +1,14 @@
+.programming-language__tabs {
+  --_rs-tab-list-indicator-background: #4ca6ff;
+}
+.programming-language__tabs [data-rs-internal='tab-list__tab'][aria-selected='true'],
+.programming-language__tabs [data-rs-internal='tab-list__tab']._selected_5hda26_160 {
+  color: #4ca6ff !important;
+}
+.programming-language__tabs ._indicator_5hda26_46 {
+  background: #4ca6ff !important;
+}
+
 .programming-language__code {
   margin: 0;
   padding: 24px;

@@ -1,12 +1,10 @@
-import { useEffect, useState } from "react";
 import { ThemeProvider } from "@rescui/ui-contexts";
+import GlobalFooter from "@jetbrains/kotlin-web-site-ui/dist/footer.js";
 
 export default function Footer(props: Record<string, unknown>) {
-  const [GlobalFooter, setGlobalFooter] = useState<React.ComponentType<Record<string, unknown>> | null>(null);
-
-  useEffect(() => {
-    import("@jetbrains/kotlin-web-site-ui/dist/footer.js").then((m) => setGlobalFooter(() => m.default));
-  }, []);
-
-  return <ThemeProvider theme="dark">{GlobalFooter ? <GlobalFooter {...props} /> : null}</ThemeProvider>;
+  return (
+    <ThemeProvider theme="dark">
+      <GlobalFooter {...props} />
+    </ThemeProvider>
+  );
 }
