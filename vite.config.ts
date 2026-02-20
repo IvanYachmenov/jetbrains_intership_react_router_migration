@@ -9,7 +9,7 @@ const root = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
   optimizeDeps: {
-    include: ["@jetbrains/kotlin-web-site-ui/out/components/header/index.js"],
+    include: ["@jetbrains/kotlin-web-site-ui/dist/header.js"],
   },
   plugins: [
     tailwindcss(),

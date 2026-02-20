@@ -8,13 +8,13 @@ export default function Header(props: Record<string, unknown>) {
   const [GlobalHeader, setGlobalHeader] = useState<React.ComponentType<Record<string, unknown>> | null>(null);
 
   useEffect(() => {
-    import("@jetbrains/kotlin-web-site-ui/out/components/header/index.js").then((m) =>
+    import("@jetbrains/kotlin-web-site-ui/dist/header.js").then((m) =>
       setGlobalHeader(() => m.default)
     );
   }, []);
 
   if (!GlobalHeader) {
-    return <header className="min-h-[52px] w-full bg-[#27282c]" aria-hidden />;
+    return null;
   }
 
   return (

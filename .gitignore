@@ -1,15 +1,9 @@
 .DS_Store
 .env
 .env.local
+.env.production
 *.log
-/node_modules/
-package-lock.json
 
+/node_modules/
 /.react-router/
 /build/
-
-# Внутренние/сгенерированные документы — не нужны тому, кто клонирует
-MIGRATION_PLAN.md
-TASK.md
-app/APP_STRUCTURE.md
-ASSETS_CHECKLIST.md

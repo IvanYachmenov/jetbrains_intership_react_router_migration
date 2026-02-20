@@ -5,6 +5,7 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useRouteError,
 } from "react-router";
 
 import type { Route } from "./+types/root";
@@ -13,13 +14,15 @@ import { Header, Footer } from "./components";
 import appCssUrl from "./app.css?url";
 import globalsCssUrl from "./styles/globals.scss?url";
 import sectionCssUrl from "./components/primitives/section.scss?url";
-import headerCssUrl from "@jetbrains/kotlin-web-site-ui/out/components/header/index.css?url";
-import footerCssUrl from "@jetbrains/kotlin-web-site-ui/out/components/footer/index.css?url";
+import headerCssUrl from "@jetbrains/kotlin-web-site-ui/dist/header.css?url";
+import headerOverridesCssUrl from "./styles/header-overrides.scss?url";
+import footerCssUrl from "@jetbrains/kotlin-web-site-ui/dist/footer.css?url";
 import jbSansFontCssUrl from "@rescui/typography/lib/font-jb-sans-auto.css?url";
 
 export const links: Route.LinksFunction = () => [
   { rel: "stylesheet", href: jbSansFontCssUrl },
   { rel: "stylesheet", href: headerCssUrl },
+  { rel: "stylesheet", href: headerOverridesCssUrl },
   { rel: "stylesheet", href: footerCssUrl },
   { rel: "stylesheet", href: appCssUrl },
   { rel: "stylesheet", href: globalsCssUrl },
@@ -34,9 +37,15 @@ export const links: Route.LinksFunction = () => [
     rel: "stylesheet",
     href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
   },
+  { rel: "preconnect", href: "https://resources.jetbrains.com" },
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
+  const error = useRouteError();
+  const is404 =
+    error != null &&
+    isRouteErrorResponse(error) &&
+    error.status === 404;
   return (
     <html lang="en">
       <head>
@@ -47,8 +56,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        <div className="global-layout">
-          <Header />
+        <div className="global-layout root-layout">
+          {!is404 && <Header />}
           <div className="g-layout global-content">
             {children}
           </div>
@@ -82,14 +91,16 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
   }
 
   return (
-    <main className="pt-16 p-4 container mx-auto">
-      <h1>{message}</h1>
-      <p>{details}</p>
-      {stack && (
-        <pre className="w-full p-4 overflow-x-auto">
-          <code>{stack}</code>
-        </pre>
-      )}
-    </main>
+    <div className="error-page">
+      <div className="error-page__content">
+        <h1 className="error-page__title">{message}</h1>
+        <p className="error-page__details">{details}</p>
+        {stack && (
+          <pre className="error-page__stack">
+            <code>{stack}</code>
+          </pre>
+        )}
+      </div>
+    </div>
   );
 }

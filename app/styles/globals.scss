@@ -1,3 +1,58 @@
 @use "reset";
 @use "fonts";
 @use "grid";
+
+.root-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.root-layout .global-content {
+  flex: 1;
+}
+
+.error-page {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+  padding: 2rem;
+}
+.error-page__content {
+  text-align: center;
+}
+.error-page__title {
+  font-size: 4rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+  line-height: 1.2;
+}
+.error-page__details {
+  margin: 0;
+  color: #57606a;
+  font-size: 1.25rem;
+}
+.error-page__stack {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  overflow-x: auto;
+  text-align: left;
+  font-size: 0.875rem;
+  max-width: 100%;
+}
+
+.overview-page,
+.overview-page .header-section {
+  background-color: #27282c !important;
+}
+.overview-page {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+:root {
+  --rs-color-primary-light-theme: var(--ktl-color-primary-light-theme);
+  --rs-color-primary-dark-theme: var(--ktl-color-primary-light-theme);
+  --rs-color-primary-t-dim-light-theme: rgba(127, 82, 255, 0.8);
+  --rs-color-primary-t-dim-dark-theme: rgba(127, 82, 255, 0.8);
+}

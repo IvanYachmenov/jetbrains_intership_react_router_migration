@@ -1,2 +1,2 @@
-declare module "@jetbrains/kotlin-web-site-ui/out/components/header/index.js";
-declare module "@jetbrains/kotlin-web-site-ui/out/components/footer/index.js";
+declare module "@jetbrains/kotlin-web-site-ui/dist/header.js";
+declare module "@jetbrains/kotlin-web-site-ui/dist/footer.js";

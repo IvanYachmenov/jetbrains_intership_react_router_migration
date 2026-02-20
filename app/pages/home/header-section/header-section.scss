@@ -1,57 +1,40 @@
-/* First hero section: dark area, overrides default section white background */
-.kto-layout-section.header-section {
+.header-section {
   background-color: transparent;
   padding-top: 96px;
-  padding-bottom: 96px;
-}
 
-.header-section__actions {
-  margin-top: 32px;
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  align-items: center;
-}
+  &__actions {
+    margin-top: 32px;
+    display: flex;
+    gap: 16px;
 
-@media screen and (max-width: 1000px) {
-  .header-section__actions {
-    flex-direction: column;
-    align-items: flex-start;
+    @media screen and (max-width: 1000px) {
+      flex-direction: column;
+    }
   }
-}
 
-.header-section__why-btn {
-  margin-left: 0;
-}
-
-@media screen and (min-width: 1001px) {
-  .header-section__why-btn {
+  &__why-btn {
     margin-left: 16px;
   }
-}
 
-.header-section__contributors {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
+  &__contributors {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
 
-/* Как в оригинале: без заданного размера, логотип в натуральную величину SVG */
-.header-section__jetbrains-logo {
-  display: block;
-}
-
-/* Get started: голубая матовая как в оригинале (переопределяем переменные кнопки) */
-.header-section__get-started-btn {
-  --_rs-color-primary: #307fff !important;
-  --_rs-color-primary-t-dim: #5594ff !important;
-  --_rs-button-background: #307fff !important;
-  --_rs-button-hover-background: #5594ff !important;
-  --_rs-button-active-background: #307fff !important;
-  background-color: #307fff !important;
-  border-color: #307fff !important;
-}
-.header-section__get-started-btn:hover {
-  background-color: #5594ff !important;
-  border-color: #5594ff !important;
+  &__get-started-btn {
+    --rs-color-primary-light-theme: #4ca6ff !important;
+    --rs-color-primary-dark-theme: #4ca6ff !important;
+    --rs-color-primary-t-dim-light-theme: rgba(76, 166, 255, 0.8) !important;
+    --rs-color-primary-t-dim-dark-theme: rgba(76, 166, 255, 0.8) !important;
+    --_rs-color-primary: #4ca6ff !important;
+    --_rs-color-primary-t-dim: rgba(76, 166, 255, 0.8) !important;
+    --_rs-button-background: #4ca6ff !important;
+    --_rs-button-hover-background: rgba(76, 166, 255, 0.8) !important;
+    --_rs-button-active-background: #4ca6ff !important;
+    background-color: #4ca6ff !important;
+  }
+  &__get-started-btn:hover {
+    background-color: rgba(76, 166, 255, 0.8) !important;
+  }
 }
